@@ -2,12 +2,20 @@
 
 Минималистичная библиотека для работы с FASTA файлами.
 
+## Установка
+'''bash
+git clone https://github.com/constellationq/fastatools.git
+cd fastatools
+
 ## Использование
+'''python
+from bioinftools import FastaReader
 
-```python
-from bioinftools import Seq, FastaReader
+reader = FastaReader("dna.fasta")
+for seq in reader.reader():
+    print (f"{seq.header}:{len(seq)} символов, тип: {seq.type()})
 
-# Чтение файла
-reader = FastaReader("sequences.fasta")
-for sequence in reader.read_sequences():
-    print(f"{sequence.header}: {len(sequence)} bp")
+## Запуск демо
+''' bash
+python test.py
+
